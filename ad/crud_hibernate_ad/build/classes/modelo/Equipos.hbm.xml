@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19-nov-2019 9:21:06 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelo.Equipos" table="equipos" catalog="informatica" optimistic-lock="version">
+        <id name="idEquipo" type="int">
+            <column name="idEquipo" />
+            <generator class="assigned" />
+        </id>
+        <property name="marca" type="string">
+            <column name="marca" length="30" not-null="true" />
+        </property>
+        <property name="modelo" type="string">
+            <column name="modelo" length="30" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="40" not-null="true" />
+        </property>
+        <property name="pulgadasPantalla" type="int">
+            <column name="pulgadasPantalla" not-null="true" />
+        </property>
+        <property name="capacidadDisco" type="int">
+            <column name="capacidadDisco" not-null="true" />
+        </property>
+        <property name="gbMemoria" type="int">
+            <column name="gbMemoria" not-null="true" />
+        </property>
+        <property name="precio" type="big_decimal">
+            <column name="precio" precision="6" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

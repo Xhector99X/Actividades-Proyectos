@@ -1,0 +1,5 @@
+inglaterra
+londres
+50000.0
+57000
+true
